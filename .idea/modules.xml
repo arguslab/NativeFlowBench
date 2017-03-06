@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/NativeFlowBench.iml" filepath="$PROJECT_DIR$/NativeFlowBench.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak/native_leak.iml" filepath="$PROJECT_DIR$/native_leak/native_leak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
+      <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />
     </modules>
   </component>
 </project>

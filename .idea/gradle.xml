@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/native_leak" />
             <option value="$PROJECT_DIR$/native_noleak" />
+            <option value="$PROJECT_DIR$/native_pure" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

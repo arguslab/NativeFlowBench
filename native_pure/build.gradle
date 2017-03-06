@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "org.arguslab.native_pure"
-        minSdkVersion 25
-        targetSdkVersion 25
+        minSdkVersion 19
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
 
@@ -18,6 +18,11 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
         }
     }
 }

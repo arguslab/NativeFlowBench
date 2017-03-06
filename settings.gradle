@@ -1,1 +1,1 @@
-include ':native_noleak'
+include ':native_noleak', ':native_leak'

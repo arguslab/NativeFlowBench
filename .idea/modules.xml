@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/NativeFlowBench.iml" filepath="$PROJECT_DIR$/NativeFlowBench.iml" />
+      <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
+    </modules>
+  </component>
+</project>

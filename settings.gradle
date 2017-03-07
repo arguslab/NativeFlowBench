@@ -1,1 +1,1 @@
-include ':native_noleak', ':native_leak', ':native_pure'
+include ':native_noleak', ':native_leak', ':native_pure', ':icc_javatonative'

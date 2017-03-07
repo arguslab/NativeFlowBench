@@ -16,6 +16,18 @@
 #define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
+
+/**
+ * @testcase_name Native_Pure
+ * @author Fengguo Wei
+ * @author_mail fgwei521@gmail.com
+ *
+ * @description The imei of a source is retrieved and leaked by the native Activity.
+ * @dataflow source -> imei -> -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis must be able to understand the native source and sink properly.
+ */
+
 struct engine {
     struct android_app* app;
 
@@ -152,7 +164,7 @@ jstring getImei(JNIEnv *env, jobject context) {
     jobject telephony = env->CallObjectMethod(context, mid, str);
     cls = env->FindClass("android/telephony/TelephonyManager");
     mid = env->GetMethodID(cls, "getDeviceId", "()Ljava/lang/String;");
-    jstring imei = (jstring) env->CallObjectMethod(telephony, mid);
+    jstring imei = (jstring) env->CallObjectMethod(telephony, mid); // source
     return imei;
 }
 
@@ -168,7 +180,7 @@ int32_t handle_input(struct android_app* app, AInputEvent* event) {
         app->activity->vm->AttachCurrentThread(&env, 0);
         jobject context = app->activity->clazz;
         jstring imei = getImei(env, context);
-        LOGI("x %d\ty %d\timei %s\n",engine->touchX,engine->touchY,getCharFromString(env, imei));
+        LOGI("x %d\ty %d\timei %s\n",engine->touchX,engine->touchY,getCharFromString(env, imei)); // sink
         return 1;
     }
     return 0;

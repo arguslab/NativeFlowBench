@@ -33,7 +33,7 @@ void handleIntent(struct android_app* state) {
     jmethodID gseid = env->GetMethodID(icl, "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;");
 
     jstring imei = (jstring) env->CallObjectMethod(intent, gseid, env->NewStringUTF("data"));
-    LOGI("%s", getCharFromString(env, imei));
+    LOGI("%s", getCharFromString(env, imei)); // leak
 }
 
 /**

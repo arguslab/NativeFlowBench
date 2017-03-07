@@ -24,7 +24,6 @@ const char* getCharFromString(JNIEnv* env, jstring string){
 }
 
 JNIEXPORT void JNICALL Java_org_arguslab_native_1leak_MainActivity_send(JNIEnv *env, jobject thisObj, jstring data) {
-    const char *charString;
     LOGI("%s", getCharFromString(env, data)); // leak
     return;
 }

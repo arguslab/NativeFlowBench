@@ -16,18 +16,6 @@
 #define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
-
-/**
- * @testcase_name Native_Pure
- * @author Fengguo Wei
- * @author_mail fgwei521@gmail.com
- *
- * @description The imei of a source is retrieved and leaked by the native Activity.
- * @dataflow source -> imei -> -> sink
- * @number_of_leaks 1
- * @challenges The analysis must be able to understand the native source and sink properly.
- */
-
 struct engine {
     struct android_app* app;
 
@@ -212,7 +200,14 @@ void handle_cmd(struct android_app* app, int32_t cmd) {
 }
 
 /**
- * Main entry point, handles events
+ * @testcase_name Native_Pure
+ * @author Fengguo Wei
+ * @author_mail fgwei521@gmail.com
+ *
+ * @description The imei of a source is retrieved and leaked by the native Activity.
+ * @dataflow source -> imei -> -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis must be able to model NativeActivity and understand the native source and sink properly.
  */
 void android_main(struct android_app* state) {
     app_dummy();

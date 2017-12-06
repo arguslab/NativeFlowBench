@@ -5,20 +5,13 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/NativeFlowBench.iml" filepath="$PROJECT_DIR$/.idea/NativeFlowBench.iml" />
       <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\NativeFlowBench.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\NativeFlowBench.iml" />
       <module fileurl="file://$PROJECT_DIR$/icc_javatonative/icc_javatonative.iml" filepath="$PROJECT_DIR$/icc_javatonative/icc_javatonative.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\icc_javatonative\icc_javatonative.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\icc_javatonative\icc_javatonative.iml" />
       <module fileurl="file://$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" filepath="$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\icc_nativetojava\icc_nativetojava.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\icc_nativetojava\icc_nativetojava.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_complexdata/native_complexdata.iml" filepath="$PROJECT_DIR$/native_complexdata/native_complexdata.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\native_complexdata\native_complexdata.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\native_complexdata\native_complexdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak/native_leak.iml" filepath="$PROJECT_DIR$/native_leak/native_leak.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\native_leak\native_leak.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\native_leak\native_leak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" filepath="$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\native_noleak\native_noleak.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\native_noleak\native_noleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\native_pure\native_pure.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\native_pure\native_pure.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" filepath="$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" />
-      <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\native_pure_direct\native_pure_direct.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\native_pure_direct\native_pure_direct.iml" />
     </modules>
   </component>
 </project>

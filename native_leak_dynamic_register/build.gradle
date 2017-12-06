@@ -4,8 +4,9 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
 
+
     defaultConfig {
-        applicationId "org.arguslab.native_leak"
+        applicationId "org.arguslab.native_leak_dynamic_register"
         minSdkVersion 23
         targetSdkVersion 25
         versionCode 1
@@ -14,6 +15,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -25,6 +27,7 @@ android {
             path 'CMakeLists.txt'
         }
     }
+
 }
 
 dependencies {

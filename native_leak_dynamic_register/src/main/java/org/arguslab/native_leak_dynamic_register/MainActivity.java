@@ -1,4 +1,4 @@
-package org.arguslab.native_leak;
+package org.arguslab.native_leak_dynamic_register;
 
 import android.Manifest;
 import android.app.Activity;
@@ -6,21 +6,24 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
+
 /**
- * @testcase_name Native_Leak
- * @author Fengguo Wei
- * @author_mail fgwei521@gmail.com
- *
+ * @author Xingwei Lin
+ * @testcase_name Native_Leak_Dynamic_Register
+ * @author_mail xwlin.roy@gmail.com
  * @description The value v of a source is sent to native lib via jni.
- * 				native lib leaks the sensitive data.
+ * Native lib leaks the sensitive data.
+ * The native method is dynamic registered by JNI_OnLoad.
  * @dataflow source -> imei -> send -JNI-> Java_org_arguslab_native_1noleak_MainActivity_send -> data -> sink
  * @number_of_leaks 1
  * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * The analysis must be able to match the corresponding native method registered by JNI_OnLoad.
  */
+
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("leak"); // "leak.dll" in Windows, "libleak.so" in Unixes
+        System.loadLibrary("leak_dynamic_register"); // "leak.dll" in Windows, "libleak.so" in Unixes
     }
 
     public static native void send(String data);
@@ -30,7 +33,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
         }
     }

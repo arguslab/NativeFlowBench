@@ -59,6 +59,7 @@ static int registerNativeMethods(JNIEnv *env, const char *className,
 * Register native methods for all classes we know about.
 */
 static int registerNatives(JNIEnv *env) {
+    int size = sizeof(gMethods[0]);
     if (!registerNativeMethods(env, JNIREG_CLASS, gMethods,
                                sizeof(gMethods) / sizeof(gMethods[0]))) {
         return JNI_FALSE;

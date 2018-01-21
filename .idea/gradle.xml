@@ -16,6 +16,7 @@
             <option value="$PROJECT_DIR$/native_noleak" />
             <option value="$PROJECT_DIR$/native_pure" />
             <option value="$PROJECT_DIR$/native_pure_direct" />
+            <option value="$PROJECT_DIR$/summary_based_bench" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

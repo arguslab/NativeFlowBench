@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/NativeFlowBench.iml" filepath="$PROJECT_DIR$/.idea/NativeFlowBench.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NativeFlowBench.iml" filepath="$PROJECT_DIR$/NativeFlowBench.iml" />
       <module fileurl="file://D:\workspace\AndroidProjects\NativeFlowBench\NativeFlowBench.iml" filepath="D:\workspace\AndroidProjects\NativeFlowBench\NativeFlowBench.iml" />
+      <module fileurl="file://F:\Master\AndroidSecurity\JN-SAF\NativeFlowBench\.idea\NativeFlowBench.iml" filepath="F:\Master\AndroidSecurity\JN-SAF\NativeFlowBench\.idea\NativeFlowBench.iml" />
       <module fileurl="file://$PROJECT_DIR$/icc_javatonative/icc_javatonative.iml" filepath="$PROJECT_DIR$/icc_javatonative/icc_javatonative.iml" />
       <module fileurl="file://$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" filepath="$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_complexdata/native_complexdata.iml" filepath="$PROJECT_DIR$/native_complexdata/native_complexdata.iml" />
@@ -12,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" filepath="$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/summary_based_bench/summary_based_bench.iml" filepath="$PROJECT_DIR$/summary_based_bench/summary_based_bench.iml" />
     </modules>
   </component>
 </project>

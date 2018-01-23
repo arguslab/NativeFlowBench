@@ -13,7 +13,10 @@ public class MainActivity extends Activity {
     }
 
     public static native Foo fieldAssignmentFromArg(SummaryBasedUtil summaryBasedUtil, Foo foo);
+
     public static native Foo fieldAssignmentFromNative(SummaryBasedUtil summaryBasedUtil);
+
+    public static native Foo fieldAssignmentFromAnotherObject(SummaryBasedUtil summaryBasedUtil, SummaryBasedUtil summaryBasedUtilAnother);
 
     @SuppressLint("LongLogTag")
     @Override
@@ -33,6 +36,15 @@ public class MainActivity extends Activity {
         Foo fooFromNative = fieldAssignmentFromNative(summaryBasedUtil);
         Log.d("fieldAssignmentFromNative", String.valueOf(fooFromNative.fooNum));
         Log.d("fieldAssignmentFromNative", fooFromNative.fooStr);
+
+        SummaryBasedUtil summaryBasedUtilAnother = new SummaryBasedUtil();
+        Foo fooAnother = new Foo();
+        fooAnother.fooNum = 2019;
+        fooAnother.fooStr = "fieldAssignmentFromAnotherObject";
+        summaryBasedUtilAnother.foo = fooAnother;
+        Foo fooFromAnotherObject = fieldAssignmentFromAnotherObject(summaryBasedUtil, summaryBasedUtilAnother);
+        Log.d("fieldAssignmentFromAnotherObject", String.valueOf(fooFromAnotherObject.fooNum));
+        Log.d("fieldAssignmentFromAnotherObject", fooFromAnotherObject.fooStr);
 
     }
 }

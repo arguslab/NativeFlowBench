@@ -20,6 +20,12 @@ JNIEXPORT jobject JNICALL
 Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromNative(JNIEnv *env,
                                                                                jobject thisObj,
                                                                                jobject summaryBasedUtil);
+
+JNIEXPORT jobject JNICALL
+Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromAnotherObject(JNIEnv *env,
+                                                                                      jobject thisObj,
+                                                                                      jobject summaryBasedUtil,
+                                                                                      jobject summaryBasedUtilAnother);
 }
 
 
@@ -56,6 +62,22 @@ Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromNative(J
     jfieldID fooFieldID = env->GetFieldID(summaryBasedUtilClass, "foo",
                                           "Lorg/arguslab/summary_based_bench/Foo;");
     env->SetObjectField(summaryBasedUtil, fooFieldID, fooObject);
+    jobject returnFoo = env->GetObjectField(summaryBasedUtil, fooFieldID);
+    return returnFoo;
+}
+
+JNIEXPORT jobject JNICALL
+Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromAnotherObject(JNIEnv *env,
+                                                                                      jobject thisObj,
+                                                                                      jobject summaryBasedUtil,
+                                                                                      jobject summaryBasedUtilAnother) {
+
+    jclass summaryBasedUtilClass = env->GetObjectClass(summaryBasedUtil);
+    jfieldID fooFieldID = env->GetFieldID(summaryBasedUtilClass, "foo",
+                                          "Lorg/arguslab/summary_based_bench/Foo;");
+
+    jobject fooAnother = env->GetObjectField(summaryBasedUtilAnother, fooFieldID);
+    env->SetObjectField(summaryBasedUtil, fooFieldID, fooAnother);
     jobject returnFoo = env->GetObjectField(summaryBasedUtil, fooFieldID);
     return returnFoo;
 }

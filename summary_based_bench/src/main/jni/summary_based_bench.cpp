@@ -26,6 +26,13 @@ Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromAnotherO
                                                                                       jobject thisObj,
                                                                                       jobject summaryBasedUtil,
                                                                                       jobject summaryBasedUtilAnother);
+JNIEXPORT jobject JNICALL
+Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromBranches(JNIEnv *env,
+                                                                                 jobject thisObj,
+                                                                                 jobject summaryBasedUtil,
+                                                                                 jobject summaryBasedUtilAnother,
+                                                                                 jobject foo,
+                                                                                 jchar flag);
 }
 
 
@@ -80,4 +87,43 @@ Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromAnotherO
     env->SetObjectField(summaryBasedUtil, fooFieldID, fooAnother);
     jobject returnFoo = env->GetObjectField(summaryBasedUtil, fooFieldID);
     return returnFoo;
+}
+
+JNIEXPORT jobject JNICALL
+Java_org_arguslab_summary_1based_1bench_MainActivity_fieldAssignmentFromBranches(JNIEnv *env,
+                                                                                 jobject thisObj,
+                                                                                 jobject summaryBasedUtil,
+                                                                                 jobject summaryBasedUtilAnother,
+                                                                                 jobject foo,
+                                                                                 jchar flag) {
+    jclass summaryBasedUtilClass = env->GetObjectClass(summaryBasedUtil);
+    jfieldID fooFieldID = env->GetFieldID(summaryBasedUtilClass, "foo",
+                                          "Lorg/arguslab/summary_based_bench/Foo;");
+    if (flag == 'A') {
+        env->SetObjectField(summaryBasedUtil, fooFieldID, foo);
+        jobject returnFromArg = env->GetObjectField(summaryBasedUtil, fooFieldID);
+        return returnFromArg;
+    } else if (flag == 'N') {
+        jclass fooClass = env->FindClass("org/arguslab/summary_based_bench/Foo");
+        jmethodID constructionMethod = env->GetMethodID(fooClass, "<init>", "()V");
+        jobject fooObject = env->NewObject(fooClass, constructionMethod);
+        jfieldID fooStrFieldID = env->GetFieldID(fooClass, "fooStr",
+                                                 "Ljava/lang/String;");
+        jstring fooStr = env->NewStringUTF("fieldAssignmentFromNative");
+        env->SetObjectField(fooObject, fooStrFieldID, fooStr);
+        jfieldID fooNumFieldID = env->GetFieldID(fooClass, "fooNum", "I");
+        env->SetIntField(fooObject, fooNumFieldID, 2018);
+        env->SetObjectField(summaryBasedUtil, fooFieldID, fooObject);
+        jobject returnFromNative = env->GetObjectField(summaryBasedUtil, fooFieldID);
+        return returnFromNative;
+    } else if (flag == 'O') {
+        jobject fooAnother = env->GetObjectField(summaryBasedUtilAnother, fooFieldID);
+        env->SetObjectField(summaryBasedUtil, fooFieldID, fooAnother);
+        jobject returnFromAnotherObject = env->GetObjectField(summaryBasedUtil, fooFieldID);
+        return returnFromAnotherObject;
+    } else {
+        return foo;
+    }
+
+
 }

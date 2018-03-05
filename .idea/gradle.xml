@@ -12,13 +12,13 @@
             <option value="$PROJECT_DIR$/icc_nativetojava" />
             <option value="$PROJECT_DIR$/native_complexdata" />
             <option value="$PROJECT_DIR$/native_heap_modify" />
+            <option value="$PROJECT_DIR$/native_heap_summary" />
             <option value="$PROJECT_DIR$/native_leak" />
             <option value="$PROJECT_DIR$/native_leak_dynamic_register" />
             <option value="$PROJECT_DIR$/native_noleak" />
             <option value="$PROJECT_DIR$/native_pure" />
             <option value="$PROJECT_DIR$/native_pure_direct" />
             <option value="$PROJECT_DIR$/native_source" />
-            <option value="$PROJECT_DIR$/summary_based_bench" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

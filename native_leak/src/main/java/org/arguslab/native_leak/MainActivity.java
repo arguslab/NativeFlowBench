@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name Native_Noleak
+ * @testcase_name Native_Leak
  * @author Fengguo Wei
  * @author_mail fgwei521@gmail.com
  *

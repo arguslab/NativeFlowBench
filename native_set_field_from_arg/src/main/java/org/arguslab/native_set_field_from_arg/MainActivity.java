@@ -11,7 +11,7 @@ public class MainActivity extends Activity {
         System.loadLibrary("set_field_from_arg"); // "set_field_from_arg.dll" in Windows, "libset_field_from_arg.so" in Unixes
     }
 
-    public static native Foo set_field(ComplexData complexData, Foo foo);
+    public static native Foo setField(ComplexData complexData, Foo foo);
 
 
     @Override
@@ -24,9 +24,9 @@ public class MainActivity extends Activity {
         Foo foo = new Foo();
         foo.setIndex(2018);
         foo.setData("set_field_from_arg");
-        Foo fooRet = set_field(complexData, foo);
-        Log.d("set_field", String.valueOf(fooRet.getIndex()));
-        Log.d("set_field", fooRet.getData());
+        Foo fooRet = setField(complexData, foo);
+        Log.d("setField", String.valueOf(fooRet.getIndex()));
+        Log.d("setField", fooRet.getData());
 
     }
 }

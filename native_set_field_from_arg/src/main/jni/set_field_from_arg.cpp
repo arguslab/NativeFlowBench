@@ -12,7 +12,7 @@
 
 extern "C" {
 JNIEXPORT jobject JNICALL
-Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_set_1field(JNIEnv *env,
+Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_setField(JNIEnv *env,
                                                                             jobject thisObj,
                                                                             jobject comlexData,
                                                                             jobject foo);
@@ -21,7 +21,7 @@ Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_set_1field(JNIEnv *
 
 
 JNIEXPORT jobject JNICALL
-Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_set_1field(JNIEnv *env,
+Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_setField(JNIEnv *env,
                                                                             jobject thisObj,
                                                                             jobject comlexData,
                                                                             jobject foo) {

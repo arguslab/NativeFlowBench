@@ -1,4 +1,4 @@
-package org.arguslab.native_heap_summary;
+package org.arguslab.native_set_field_from_arg;
 
 import org.junit.Test;
 

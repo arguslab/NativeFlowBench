@@ -5,7 +5,7 @@ android {
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId "org.arguslab.native_heap_summary"
+        applicationId "org.arguslab.native_set_field_from_arg"
         minSdkVersion 23
         targetSdkVersion 26
         versionCode 1

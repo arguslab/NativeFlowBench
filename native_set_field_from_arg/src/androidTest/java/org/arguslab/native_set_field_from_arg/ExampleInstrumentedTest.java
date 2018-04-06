@@ -1,4 +1,4 @@
-package org.arguslab.native_heap_summary;
+package org.arguslab.native_set_field_from_arg;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("org.arguslab.native_heap_summary", appContext.getPackageName());
+        assertEquals("org.arguslab.native_set_field_from_arg", appContext.getPackageName());
     }
 }

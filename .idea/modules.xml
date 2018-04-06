@@ -7,12 +7,12 @@
       <module fileurl="file://$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" filepath="$PROJECT_DIR$/icc_nativetojava/icc_nativetojava.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_complexdata/native_complexdata.iml" filepath="$PROJECT_DIR$/native_complexdata/native_complexdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_heap_modify/native_heap_modify.iml" filepath="$PROJECT_DIR$/native_heap_modify/native_heap_modify.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_heap_summary/native_heap_summary.iml" filepath="$PROJECT_DIR$/native_heap_summary/native_heap_summary.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak/native_leak.iml" filepath="$PROJECT_DIR$/native_leak/native_leak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" filepath="$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" filepath="$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/native_set_field_from_arg/native_set_field_from_arg.iml" filepath="$PROJECT_DIR$/native_set_field_from_arg/native_set_field_from_arg.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_source/native_source.iml" filepath="$PROJECT_DIR$/native_source/native_source.iml" />
     </modules>
   </component>

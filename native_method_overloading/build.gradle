@@ -2,21 +2,18 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '27.0.3'
 
 
 
     defaultConfig {
-        applicationId "org.arguslab.native_set_field_from_native"
-        minSdkVersion 23
+        applicationId "org.arguslab.native_method_overloading"
+        minSdkVersion 25
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        ndk {
-            abiFilters 'armeabi', 'armeabi-v7a', 'x86', 'x86_64', 'arm64-v8a', 'mips', 'mips64'
-        }
+
     }
 
     buildTypes {
@@ -30,6 +27,7 @@ android {
             path 'CMakeLists.txt'
         }
     }
+
 }
 
 dependencies {

@@ -26,7 +26,7 @@ const char *getCharFromString(JNIEnv *env, jstring string) {
 }
 
 JNIEXPORT void JNICALL
-Java_org_arguslab_native_1method_1overloading_MainActivity_send__I(JNIEnv *env, jobject thisObj, jstring data) {
+Java_org_arguslab_native_1method_1overloading_MainActivity_send__I(JNIEnv *env, jobject thisObj, jint data) {
     return;
 }
 

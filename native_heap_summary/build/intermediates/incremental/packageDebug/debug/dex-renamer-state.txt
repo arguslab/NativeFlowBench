@@ -1,0 +1,4 @@
+#Tue Mar 06 18:47:44 EST 2018
+base.0=/Users/fgwei/AndroidStudioProjects/NativeFlowBench/native_heap_summary/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

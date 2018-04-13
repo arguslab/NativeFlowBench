@@ -14,7 +14,7 @@ extern "C" {
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv *env,
                                                                              jobject thisObj,
-                                                                             jobject comlexData);
+                                                                             jobject complexData);
 
 }
 
@@ -22,7 +22,7 @@ Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv 
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv *env,
                                                                              jobject thisObj,
-                                                                             jobject comlexData) {
+                                                                             jobject complexData) {
     jclass fooClass = env->FindClass("org/arguslab/native_set_field_from_native/Foo");
     jmethodID constructionMethod = env->GetMethodID(fooClass, "<init>", "()V");
     jobject foo = env->NewObject(fooClass, constructionMethod);
@@ -34,11 +34,11 @@ Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv 
     jfieldID indexFieldID = env->GetFieldID(fooClass, "index", "I");
     env->SetIntField(foo, indexFieldID, 2018);
 
-    jclass complexDataClass = env->GetObjectClass(comlexData);
+    jclass complexDataClass = env->GetObjectClass(complexData);
     jfieldID fooFieldID = env->GetFieldID(complexDataClass, "foo",
                                           "Lorg/arguslab/native_set_field_from_native/Foo;");
-    env->SetObjectField(comlexData, fooFieldID, foo);
-    jobject fooRet = env->GetObjectField(comlexData, fooFieldID);
+    env->SetObjectField(complexData, fooFieldID, foo);
+    jobject fooRet = env->GetObjectField(complexData, fooFieldID);
     return fooRet;
 }
 

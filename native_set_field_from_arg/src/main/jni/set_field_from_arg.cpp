@@ -14,7 +14,7 @@ extern "C" {
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_setField(JNIEnv *env,
                                                                             jobject thisObj,
-                                                                            jobject comlexData,
+                                                                            jobject complexData,
                                                                             jobject foo);
 
 }
@@ -23,13 +23,13 @@ Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_setField(JNIEnv *en
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1arg_MainActivity_setField(JNIEnv *env,
                                                                             jobject thisObj,
-                                                                            jobject comlexData,
+                                                                            jobject complexData,
                                                                             jobject foo) {
-    jclass complexDataClass = env->GetObjectClass(comlexData);
+    jclass complexDataClass = env->GetObjectClass(complexData);
     jfieldID fooFieldID = env->GetFieldID(complexDataClass, "foo",
                                           "Lorg/arguslab/native_set_field_from_arg/Foo;");
-    env->SetObjectField(comlexData, fooFieldID, foo);
-    jobject fooRet = env->GetObjectField(comlexData, fooFieldID);
+    env->SetObjectField(complexData, fooFieldID, foo);
+    jobject fooRet = env->GetObjectField(complexData, fooFieldID);
     return fooRet;
 }
 

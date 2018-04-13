@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/icc_javatonative" />
             <option value="$PROJECT_DIR$/icc_nativetojava" />
             <option value="$PROJECT_DIR$/native_complexdata" />
+            <option value="$PROJECT_DIR$/native_dynamic_register_multiple" />
             <option value="$PROJECT_DIR$/native_heap_modify" />
             <option value="$PROJECT_DIR$/native_leak" />
             <option value="$PROJECT_DIR$/native_leak_dynamic_register" />

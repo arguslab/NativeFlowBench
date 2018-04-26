@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/native_leak/native_leak.iml" filepath="$PROJECT_DIR$/native_leak/native_leak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" filepath="$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_method_overloading/native_method_overloading.iml" filepath="$PROJECT_DIR$/native_method_overloading/native_method_overloading.iml" />
+      <module fileurl="file://$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" filepath="$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" filepath="$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />

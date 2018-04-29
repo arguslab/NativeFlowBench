@@ -27,6 +27,7 @@
             <option value="$PROJECT_DIR$/native_set_field_from_branches" />
             <option value="$PROJECT_DIR$/native_set_field_from_native" />
             <option value="$PROJECT_DIR$/native_source" />
+            <option value="$PROJECT_DIR$/native_source_clean" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

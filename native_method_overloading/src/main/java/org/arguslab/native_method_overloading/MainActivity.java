@@ -12,8 +12,8 @@ public class MainActivity extends Activity {
         System.loadLibrary("method_overloading");
     }
 
-    native void send(int data);
-    native void send(int[] array, String[] array2, double d, String data);
+    public static native void send(int data);
+    public static native void send(int[] array, String[] array2, double d, String data);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

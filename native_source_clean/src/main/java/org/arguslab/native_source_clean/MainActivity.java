@@ -7,10 +7,20 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+/**
+ * @testcase_name native_source_clean
+ * @author Fengguo Wei, Xingwei Lin
+ * @author_mail fgwei521@gmail.com
+ *
+ * @description The native function clears sensitive data for argument fields.
+ * @dataflow none sensitive -> sink
+ * @number_of_leaks 0
+ * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ */
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("source_clean"); // "source_clean.dll" in Windows, "libsource_clean.so" in Unixes
+        System.loadLibrary("source_clean"); // "libsource_clean.so"
     }
 
     public static native void sourceClean(ComplexData data);
@@ -26,6 +36,9 @@ public class MainActivity extends Activity {
 
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         String imei = tel.getDeviceId(); // source
         ComplexData complexData = new ComplexData();
         complexData.setData(imei);

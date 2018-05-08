@@ -13,15 +13,15 @@ import android.telephony.TelephonyManager;
  * @author_mail xwlin.roy@gmail.com
  * @description The value v of a source is sent to native lib via jni.
  * native lib is not leaking the data.
- * @dataflow
- * @number_of_leaks 0
- * @challenges The analysis must be able to track data flow in both java and native to avoid the false positive.
+ * @dataflow imei -> mastersend -> libmaster.so .mastersend -> leak
+ * @number_of_leaks 1
+ * @challenges The analysis must success find native function when multiple library is loaded.
  */
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("master"); // "master.dll" in Windows, "libmaster.so" in Unixes
-        System.loadLibrary("foo"); // "foo.dll" in Windows, "libfoo.so" in Unixes
+        System.loadLibrary("master"); // "libmaster.so"
+        System.loadLibrary("foo"); // "libfoo.so"
     }
 
     public static native void masterSend(String data);
@@ -40,6 +40,9 @@ public class MainActivity extends Activity {
 
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         String imei = tel.getDeviceId(); // source
         masterSend(imei);
     }

@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "org.arguslab.native_multiple_interactions"
-        minSdkVersion 19
+        minSdkVersion 23
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"

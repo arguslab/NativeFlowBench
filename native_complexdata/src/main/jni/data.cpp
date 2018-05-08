@@ -9,6 +9,7 @@
 
 extern "C" {
 JNIEXPORT void JNICALL Java_org_arguslab_native_1complexdata_MainActivity_send(JNIEnv *env, jobject thisObj, jobject data);
+JNIEXPORT void JNICALL Java_org_arguslab_native_1complexdata_MainActivity_send2(JNIEnv *env, jobject thisObj, jobject data);
 }
 
 const char* getCharFromString(JNIEnv* env, jstring string){
@@ -23,5 +24,13 @@ JNIEXPORT void JNICALL Java_org_arguslab_native_1complexdata_MainActivity_send(J
     jmethodID gd = env->GetMethodID(cd, "getData", "()Ljava/lang/String;");
     jstring str = (jstring) env->CallObjectMethod(data, gd);
     LOGI("%s", getCharFromString(env, str)); // leak
+    return;
+}
+
+JNIEXPORT void JNICALL Java_org_arguslab_native_1complexdata_MainActivity_send2(JNIEnv *env, jobject thisObj, jobject data) {
+    jclass cd = env->GetObjectClass(data);
+    jmethodID gd = env->GetMethodID(cd, "getOther", "()Ljava/lang/String;");
+    jstring str = (jstring) env->CallObjectMethod(data, gd);
+    LOGI("%s", getCharFromString(env, str));
     return;
 }

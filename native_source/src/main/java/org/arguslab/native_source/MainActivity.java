@@ -20,7 +20,7 @@ import android.util.Log;
  */
 public class MainActivity extends AppCompatActivity {
     static {
-        System.loadLibrary("source"); // "source.dll" in Windows, "libsource.so" in Unixes
+        System.loadLibrary("source"); // "libsource.so"
     }
 
     public static native String getImei(Context myContext);

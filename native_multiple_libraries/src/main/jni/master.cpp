@@ -15,7 +15,14 @@ extern "C" {
     JNIEXPORT void JNICALL Java_org_arguslab_native_1multiple_1libraries_MainActivity_masterSend(JNIEnv *env, jobject thisObj, jstring data);
 }
 
+const char *getCharFromString(JNIEnv *env, jstring string) {
+    if (string == NULL)
+        return NULL;
+
+    return env->GetStringUTFChars(string, 0);
+}
+
 JNIEXPORT void JNICALL Java_org_arguslab_native_1multiple_1libraries_MainActivity_masterSend(JNIEnv *env, jobject thisObj, jstring data) {
-    LOGI("some data");
+    LOGI("%s", getCharFromString(env, data)); // leak
     return;
 }

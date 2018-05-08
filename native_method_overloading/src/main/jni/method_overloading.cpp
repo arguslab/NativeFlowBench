@@ -27,11 +27,11 @@ const char *getCharFromString(JNIEnv *env, jstring string) {
 
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1method_1overloading_MainActivity_send__I(JNIEnv *env, jobject thisObj, jint data) {
+    LOGI("%s", getCharFromString(env, data)); // leak
     return;
 }
 
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1method_1overloading_MainActivity_send___3I_3Ljava_lang_String_2Ljava_lang_String_2D(JNIEnv *env, jobject thisObj, jintArray array, jobjectArray array2, jstring data, jdouble d) {
-    LOGI("%s", getCharFromString(env, data)); // leak
     return;
 }

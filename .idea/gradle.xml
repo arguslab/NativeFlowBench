@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/native_multiple_interactions" />
             <option value="$PROJECT_DIR$/native_multiple_libraries" />
             <option value="$PROJECT_DIR$/native_noleak" />
+            <option value="$PROJECT_DIR$/native_nosource" />
             <option value="$PROJECT_DIR$/native_pure" />
             <option value="$PROJECT_DIR$/native_pure_direct" />
             <option value="$PROJECT_DIR$/native_pure_direct_customized" />

@@ -20,7 +20,7 @@ import android.util.Log;
  */
 public class MainActivity extends AppCompatActivity {
     static {
-        System.loadLibrary("heap_modify"); // "heap_modify.dll" in Windows, "libheap_modify.so" in Unixes
+        System.loadLibrary("heap_modify"); // "libheap_modify.so"
     }
 
     public static native void heapModify(Context myContext, Data data);

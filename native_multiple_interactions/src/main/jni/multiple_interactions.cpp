@@ -14,7 +14,7 @@
 extern "C" {
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env, jobject thisObj,
-                                                                      jobject mContext);
+                                                                      jobject data);
 
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1multiple_1interactions_MainActivity_leakImei(JNIEnv *env, jobject thisObj,
@@ -29,29 +29,15 @@ const char *getCharFromString(JNIEnv *env, jstring string) {
     return env->GetStringUTFChars(string, 0);
 }
 
-jstring getImei(JNIEnv *env, jobject context) {
-    jclass cls = env->FindClass("android/content/Context");
-    jmethodID mid = env->GetMethodID(cls, "getSystemService",
-                                     "(Ljava/lang/String;)Ljava/lang/Object;");
-    jfieldID fid = env->GetStaticFieldID(cls, "TELEPHONY_SERVICE",
-                                         "Ljava/lang/String;");
-    jstring str = (jstring) env->GetStaticObjectField(cls, fid);
-    jobject telephony = env->CallObjectMethod(context, mid, str);
-    cls = env->FindClass("android/telephony/TelephonyManager");
-    mid = env->GetMethodID(cls, "getDeviceId", "()Ljava/lang/String;");
-    jstring imei = (jstring) env->CallObjectMethod(telephony, mid); // source
-    return imei;
-}
-
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env, jobject thisObj,
-                                                                      jobject mContext) {
-    jstring deviceid = getImei(env, mContext);
-    jclass cd = env->FindClass("org/arguslab/native_multiple_interactions/MainActivity");
-    jmethodID constructionMethod = env->GetMethodID(cd, "<init>", "()V");
-    jobject ma = env->NewObject(cd, constructionMethod);
+                                                                      jobject data) {
+    jclass cd = env->GetObjectClass(data);
+    jfieldID fd = env->GetFieldID(cd, "str", "Ljava/lang/String;");
+    jobject imei = env->GetObjectField(data ,fd);
+    cd = env->FindClass("org/arguslab/native_multiple_interactions/MainActivity");
     jmethodID gd = env->GetMethodID(cd, "toNativeAgain", "(Ljava/lang/String;)V");
-    env->CallVoidMethod(ma, gd, deviceid);
+    env->CallVoidMethod(thisObj, gd, imei);
     return;
 }
 

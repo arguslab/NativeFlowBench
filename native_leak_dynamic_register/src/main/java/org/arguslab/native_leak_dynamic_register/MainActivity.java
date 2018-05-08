@@ -14,7 +14,7 @@ import android.telephony.TelephonyManager;
  * @description The value v of a source is sent to native lib via jni.
  * Native lib leaks the sensitive data.
  * The native method is dynamic registered by JNI_OnLoad.
- * @dataflow source -> imei -> send -JNI-> Java_org_arguslab_native_1noleak_MainActivity_send -> data -> sink
+ * @dataflow source -> imei -> send -JNI-> native_send -> data -> sink
  * @number_of_leaks 1
  * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
  * The analysis must be able to match the corresponding native method registered by JNI_OnLoad.
@@ -40,6 +40,9 @@ public class MainActivity extends Activity {
 
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         String imei = tel.getDeviceId(); // source
         send(imei);
     }

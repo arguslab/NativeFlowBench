@@ -33,10 +33,12 @@ JNIEXPORT void JNICALL native_send(JNIEnv *env, jobject thisObj, jstring data) {
 }
 
 JNIEXPORT void JNICALL native_sendFoo(JNIEnv *env, jobject thisObj, jint index, jstring data) {
+    LOGI("IMEI: %s", getCharFromString(env, data)); // leak
     return;
 }
 
 JNIEXPORT void JNICALL native_sendBar(JNIEnv *env, jobject thisObj, jdouble dw, jstring data) {
+    LOGI("IMEI: %s", getCharFromString(env, data)); // leak
     return;
 }
 

@@ -3,7 +3,7 @@ package org.arguslab.native_complexdata;
 public class ComplexData {
     private String data;
     private int index;
-    private String ohter;
+    private String other;
 
     public String getData() {
         return data;
@@ -21,11 +21,11 @@ public class ComplexData {
         this.index = index;
     }
 
-    public String getOhter() {
-        return ohter;
+    public String getOther() {
+        return other;
     }
 
-    public void setOhter(String ohter) {
-        this.ohter = ohter;
+    public void setOther(String other) {
+        this.other = other;
     }
 }

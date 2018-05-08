@@ -6,10 +6,22 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
+/**
+ * @author Xingwei Lin
+ * @testcase_name Native_Dynamic_Register_Multiple
+ * @author_mail xwlin.roy@gmail.com
+ * @description The value v of a source is sent to native lib via jni.
+ * Native lib leaks the sensitive data.
+ * The native method is dynamic registered by JNI_OnLoad.
+ * @dataflow source -> imei -> send -JNI-> native_send -> data -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * The analysis must be able to match the corresponding native method registered by JNI_OnLoad.
+ */
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("dynamic_register_multiple"); // "dynamic_register_multiple.dll" in Windows, "libdynamic_register_multiple.so" in Unixes
+        System.loadLibrary("dynamic_register_multiple"); // "libdynamic_register_multiple.so"
     }
 
     public static native void send(String data);
@@ -30,6 +42,9 @@ public class MainActivity extends Activity {
 
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         String imei = tel.getDeviceId(); // source
         send(imei);
     }

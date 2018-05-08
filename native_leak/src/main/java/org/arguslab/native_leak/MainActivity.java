@@ -20,7 +20,7 @@ import android.telephony.TelephonyManager;
 public class MainActivity extends Activity {
 
     static {
-        System.loadLibrary("leak"); // "leak.dll" in Windows, "libleak.so" in Unixes
+        System.loadLibrary("leak"); // "libleak.so"
     }
 
     public static native void send(String data);
@@ -30,13 +30,16 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
         }
     }
 
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
         String imei = tel.getDeviceId(); // source
         send(imei);
     }

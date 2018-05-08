@@ -346,6 +346,16 @@ static void OnLowMemory(ANativeActivity *activity) {
 
 //--------------------------------------------------------------------------------------------------
 
+/**
+ * @testcase_name native_pure_direct_customized
+ * @author Fengguo Wei
+ * @author_mail fgwei521@gmail.com
+ *
+ * @description The imei of a source is retrieved and leaked by the native Activity.
+ * @dataflow source -> imei -> -> sink
+ * @number_of_leaks 1
+ * @challenges The analysis must be able to model NativeActivity and understand the native source and sink properly.
+ */
 extern "C" void
 NativeActivity_Entry(ANativeActivity *activity, void *savedState, size_t savedStateSize) {
     LOGD("NativeActivity_Entry Start");

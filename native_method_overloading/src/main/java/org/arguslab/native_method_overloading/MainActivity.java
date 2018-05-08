@@ -3,6 +3,7 @@ package org.arguslab.native_method_overloading;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
@@ -12,15 +13,16 @@ public class MainActivity extends Activity {
         System.loadLibrary("method_overloading");
     }
 
-    public static native void send(int data);
-    public static native void send(int[] array, String[] array2, double d, String data);
+    native void send(int data);
+
+    native void send(int[] array, String[] array2, String data, double d);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
         }
     }
@@ -28,7 +30,7 @@ public class MainActivity extends Activity {
     private void leakImei() {
         TelephonyManager tel = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         String imei = tel.getDeviceId(); // source
-        send(new int[1], new String[1], 0D, imei);
+        send(new int[1], new String[1], imei, 0D);
     }
 
     @Override

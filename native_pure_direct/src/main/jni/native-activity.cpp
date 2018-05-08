@@ -258,7 +258,7 @@ static void OnStart(ANativeActivity *activity) {
     activity->vm->AttachCurrentThread(&env, 0);
     jobject context = activity->clazz;
     jstring imei = getImei(env, context);
-    LOGD("Device ID: ", getCharFromString(env, imei));
+    LOGD("Device ID: %s", getCharFromString(env, imei));
 
 }
 

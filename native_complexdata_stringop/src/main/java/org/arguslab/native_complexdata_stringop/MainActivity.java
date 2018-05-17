@@ -13,7 +13,7 @@ import android.telephony.TelephonyManager;
  * @description Put sensitive into a field of Data and native read a field with constructed string, non sensitive field reach sink.
  * @dataflow
  * @number_of_leaks 0
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to capture the data leakage.
  */
 public class MainActivity extends AppCompatActivity {
 

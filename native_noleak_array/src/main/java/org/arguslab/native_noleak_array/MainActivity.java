@@ -14,7 +14,7 @@ import android.telephony.TelephonyManager;
  * native lib sinks other array index.
  * @dataflow
  * @number_of_leaks 0
- * @challenges The analysis must be able to track data flow in both java and native to avoid the false positive.
+ * @challenges The analysis must be able to track data flow in both java and native layers to avoid the false positive.
  */
 public class MainActivity extends AppCompatActivity {
 

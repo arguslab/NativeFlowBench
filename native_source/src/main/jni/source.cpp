@@ -6,12 +6,14 @@
 
 extern "C" {
 JNIEXPORT jstring JNICALL
-Java_org_arguslab_native_1source_MainActivity_getImei(JNIEnv *env, jobject thisObj, jobject context);
+Java_org_arguslab_native_1source_MainActivity_getImei(JNIEnv *env, jobject thisObj,
+                                                      jobject context);
 
 }
 
 JNIEXPORT jstring JNICALL
-Java_org_arguslab_native_1source_MainActivity_getImei(JNIEnv *env, jobject thisObj, jobject context) {
+Java_org_arguslab_native_1source_MainActivity_getImei(JNIEnv *env, jobject thisObj,
+                                                      jobject context) {
     jclass cls = env->FindClass("android/content/Context");
     jmethodID mid = env->GetMethodID(cls, "getSystemService",
                                      "(Ljava/lang/String;)Ljava/lang/Object;");

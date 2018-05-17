@@ -12,7 +12,9 @@
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
 extern "C" {
-    JNIEXPORT void JNICALL Java_org_arguslab_native_1noleak_1array_MainActivity_send(JNIEnv *env, jobject thisObj, jobjectArray array);
+JNIEXPORT void JNICALL
+Java_org_arguslab_native_1noleak_1array_MainActivity_send(JNIEnv *env, jobject thisObj,
+                                                          jobjectArray array);
 }
 
 const char *getCharFromString(JNIEnv *env, jstring string) {
@@ -22,7 +24,9 @@ const char *getCharFromString(JNIEnv *env, jstring string) {
     return env->GetStringUTFChars(string, 0);
 }
 
-JNIEXPORT void JNICALL Java_org_arguslab_native_1noleak_1array_MainActivity_send(JNIEnv *env, jobject thisObj, jobjectArray array) {
+JNIEXPORT void JNICALL
+Java_org_arguslab_native_1noleak_1array_MainActivity_send(JNIEnv *env, jobject thisObj,
+                                                          jobjectArray array) {
     jstring string = (jstring) (env->GetObjectArrayElement(array, 4));
 
     LOGI("%s", getCharFromString(env, string));

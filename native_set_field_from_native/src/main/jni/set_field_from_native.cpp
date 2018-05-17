@@ -1,5 +1,5 @@
 //
-// Created by Xingwei Lin on 14/1/18.
+// Created by Xingwei Lin on 14/01/18.
 //
 
 #include <jni.h>
@@ -13,8 +13,8 @@
 extern "C" {
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv *env,
-                                                                             jobject thisObj,
-                                                                             jobject complexData);
+                                                                         jobject thisObj,
+                                                                         jobject complexData);
 
 }
 
@@ -34,14 +34,14 @@ jstring getImei(JNIEnv *env, jobject context) {
 
 JNIEXPORT jobject JNICALL
 Java_org_arguslab_native_1set_1field_1from_1native_MainActivity_setField(JNIEnv *env,
-                                                                             jobject thisObj,
-                                                                             jobject complexData) {
+                                                                         jobject thisObj,
+                                                                         jobject complexData) {
     jclass fooClass = env->FindClass("org/arguslab/native_set_field_from_native/Foo");
     jmethodID constructionMethod = env->GetMethodID(fooClass, "<init>", "()V");
     jobject foo = env->NewObject(fooClass, constructionMethod);
 
     jfieldID dataFieldID = env->GetFieldID(fooClass, "data",
-                                             "Ljava/lang/String;");
+                                           "Ljava/lang/String;");
     jstring data = getImei(env, thisObj); // source
     env->SetObjectField(foo, dataFieldID, data);
     jfieldID indexFieldID = env->GetFieldID(fooClass, "index", "I");

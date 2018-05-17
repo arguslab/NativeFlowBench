@@ -6,7 +6,8 @@
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_org_arguslab_native_1heap_1modify_MainActivity_heapModify(JNIEnv *env, jobject thisObj, jobject mContext, jobject data);
+Java_org_arguslab_native_1heap_1modify_MainActivity_heapModify(JNIEnv *env, jobject thisObj,
+                                                               jobject mContext, jobject data);
 
 }
 
@@ -25,10 +26,11 @@ jstring getImei(JNIEnv *env, jobject context) {
 }
 
 JNIEXPORT void JNICALL
-Java_org_arguslab_native_1heap_1modify_MainActivity_heapModify(JNIEnv *env, jobject thisObj, jobject mContext, jobject data) {
+Java_org_arguslab_native_1heap_1modify_MainActivity_heapModify(JNIEnv *env, jobject thisObj,
+                                                               jobject mContext, jobject data) {
     jstring deviceid = getImei(env, mContext);
     jclass cd = env->GetObjectClass(data);
     jfieldID fd = env->GetFieldID(cd, "str", "Ljava/lang/String;");
-    env->SetObjectField(data ,fd, deviceid);
+    env->SetObjectField(data, fd, deviceid);
     return;
 }

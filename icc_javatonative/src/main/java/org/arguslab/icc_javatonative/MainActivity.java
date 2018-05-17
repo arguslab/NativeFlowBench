@@ -8,15 +8,14 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name ICC_JavaToNative
  * @author Fengguo Wei
+ * @testcase_name ICC_JavaToNative
  * @author_mail fgwei521@gmail.com
- *
  * @description The value v of a source is sent to native Activity via Intent.
- * 				native Activity leaks the sensitive data.
+ * native Activity leaks the sensitive data.
  * @dataflow source -> imei -> MainActivity's intent -> NativeActivity's intent -> data -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to capture the data leakage.
  */
 public class MainActivity extends Activity {
 

@@ -9,11 +9,11 @@ import android.telephony.TelephonyManager;
 
 /**
  * @author Xingwei Lin
- * @testcase_name Native_Multiple_Libraries
+ * @testcase_name native_multiple_libraries
  * @author_mail xwlin.roy@gmail.com
  * @description The value v of a source is sent to native lib via jni.
  * native lib is not leaking the data.
- * @dataflow imei -> mastersend -> libmaster.so .mastersend -> leak
+ * @dataflow imei -> masterSend -> libmaster.so .masterSend -> leak
  * @number_of_leaks 1
  * @challenges The analysis must success find native function when multiple library is loaded.
  */

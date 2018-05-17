@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name native_complexdata_stringop
  * @author Fengguo Wei
+ * @testcase_name native_complexdata_stringop
  * @author_mail fgwei521@gmail.com
- *
  * @description Put sensitive into a field of Data and native read a field with constructed string, non sensitive field reach sink.
  * @dataflow
  * @number_of_leaks 0

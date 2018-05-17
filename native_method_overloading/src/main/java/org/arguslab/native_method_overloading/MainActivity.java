@@ -8,12 +8,11 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name native_method_overloading
  * @author Fengguo Wei
+ * @testcase_name native_method_overloading
  * @author_mail fgwei521@gmail.com
- *
  * @description The value v of a source is sent to an overloaded native function f2.
- * 				f2 is not leaking the data.
+ * f2 is not leaking the data.
  * @dataflow
  * @number_of_leaks 0
  * @challenges The analysis must be able to correctly handle method overloading.

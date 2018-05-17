@@ -63,11 +63,11 @@ static struct {
 //--------------------------------------------------------------------------------------------------
 
 
-const char* getCharFromString(JNIEnv* env, jstring string){
-    if(string == NULL)
+const char *getCharFromString(JNIEnv *env, jstring string) {
+    if (string == NULL)
         return NULL;
 
-    return  env->GetStringUTFChars(string ,0);
+    return env->GetStringUTFChars(string, 0);
 }
 
 /**
@@ -254,7 +254,7 @@ static inline void SaveData(ANativeActivity *activity) {
 
 static void OnStart(ANativeActivity *activity) {
     LOGD("NativeActivity OnStart");
-    JNIEnv* env = activity->env;
+    JNIEnv *env = activity->env;
     activity->vm->AttachCurrentThread(&env, 0);
     jobject context = activity->clazz;
     jstring imei = getImei(env, context); // source

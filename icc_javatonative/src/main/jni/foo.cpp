@@ -12,14 +12,14 @@
 #define LOGE(...)  __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
-const char* getCharFromString(JNIEnv* env, jstring string){
-    if(string == NULL)
+const char *getCharFromString(JNIEnv *env, jstring string) {
+    if (string == NULL)
         return NULL;
 
-    return  env->GetStringUTFChars(string ,0);
+    return env->GetStringUTFChars(string, 0);
 }
 
-void handleIntent(struct android_app* state) {
+void handleIntent(struct android_app *state) {
     JNIEnv *env;
     state->activity->vm->AttachCurrentThread(&env, 0);
 
@@ -30,7 +30,8 @@ void handleIntent(struct android_app* state) {
     jobject intent = env->CallObjectMethod(me, giid); //Got our intent
 
     jclass icl = env->GetObjectClass(intent); //class pointer of Intent
-    jmethodID gseid = env->GetMethodID(icl, "getStringExtra", "(Ljava/lang/String;)Ljava/lang/String;");
+    jmethodID gseid = env->GetMethodID(icl, "getStringExtra",
+                                       "(Ljava/lang/String;)Ljava/lang/String;");
 
     jstring imei = (jstring) env->CallObjectMethod(intent, gseid, env->NewStringUTF("data"));
     LOGI("%s", getCharFromString(env, imei)); // leak
@@ -39,7 +40,7 @@ void handleIntent(struct android_app* state) {
 /**
  * Main entry point, handles events
  */
-void android_main(struct android_app* state) {
+void android_main(struct android_app *state) {
     app_dummy();
 
     handleIntent(state);
@@ -47,9 +48,9 @@ void android_main(struct android_app* state) {
     while (1) {
         int ident;
         int events;
-        struct android_poll_source* source;
+        struct android_poll_source *source;
 
-        while ((ident=ALooper_pollAll(0, NULL, &events,(void**)&source)) >= 0) {
+        while ((ident = ALooper_pollAll(0, NULL, &events, (void **) &source)) >= 0) {
 
             // Process this event.
             if (source != NULL) {

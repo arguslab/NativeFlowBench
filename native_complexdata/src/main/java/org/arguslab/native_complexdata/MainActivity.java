@@ -7,14 +7,13 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name native_complexdata
  * @author Fengguo Wei
+ * @testcase_name native_complexdata
  * @author_mail fgwei521@gmail.com
- *
  * @description Put sensitive into a field of Data and leak the field in native.
  * @dataflow imei -> d.data -JNI-> Java_org_arguslab_native_1complexdata_MainActivity_send -> imei -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to capture the data leakage.
  */
 public class MainActivity extends Activity {
     static {
@@ -22,6 +21,7 @@ public class MainActivity extends Activity {
     }
 
     public static native void send(ComplexData data);
+
     public static native void send2(ComplexData data);
 
     @Override

@@ -9,14 +9,13 @@ import android.util.Log;
 
 
 /**
- * @testcase_name native_set_field_from_arg
  * @author Fengguo Wei, Xingwei Lin
- * @author_mail fgwei521@gmail.com
- *
- * @description  Put sensitive into a field of Foo and native set to field of Data and leak the field in Java.
+ * @testcase_name native_set_field_from_arg
+ * @author_mail fgwei521@gmail.com, xwlin.roy@gmail.com
+ * @description Put sensitive into a field of Foo and native set to field of Data and leak the field in Java.
  * @dataflow imei -> foo.data -> complexData.foo -> sink
  * @number_of_leaks 2
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to capture the data leakage.
  */
 public class MainActivity extends Activity {
 
@@ -32,7 +31,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.READ_PHONE_STATE}, 1);
         }
     }

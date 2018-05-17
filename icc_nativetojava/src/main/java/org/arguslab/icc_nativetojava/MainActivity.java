@@ -8,15 +8,14 @@ import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name ICC_NativeToJava
  * @author Fengguo Wei
+ * @testcase_name ICC_NativeToJava
  * @author_mail fgwei521@gmail.com
- *
  * @description The value v of a source is sent to native lib via jni.
- * 				native lib leaks the sensitive data.
+ * native lib leaks the sensitive data.
  * @dataflow source -> imei -> sendIntent -JNI-> Java_org_arguslab_icc_1nativetojava_MainActivity_sendIntent -> MainActivity's Intent -> FooActivity's Intent -> data -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to handle Intent created in native to capture the data leakage.
+ * @challenges The analysis must be able to handle Intent created in native layer to capture the data leakage.
  */
 public class MainActivity extends Activity {
 

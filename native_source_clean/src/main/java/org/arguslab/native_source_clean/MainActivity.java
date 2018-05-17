@@ -8,14 +8,13 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
- * @testcase_name native_source_clean
  * @author Fengguo Wei, Xingwei Lin
- * @author_mail fgwei521@gmail.com
- *
+ * @testcase_name native_source_clean
+ * @author_mail fgwei521@gmail.com, xwlin.roy@gmail.com
  * @description The native function clears sensitive data for argument fields.
  * @dataflow none sensitive -> sink
  * @number_of_leaks 0
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to avoid the false positive.
  */
 public class MainActivity extends Activity {
 

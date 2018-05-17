@@ -1,5 +1,5 @@
 //
-// Created by Xingwei Lin on 3/4/18.
+// Created by Fengguo Wei, Xingwei Lin on 3/4/18.
 //
 
 #include <jni.h>
@@ -13,8 +13,9 @@
 
 extern "C" {
 JNIEXPORT void JNICALL
-Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env, jobject thisObj,
-                                                                      jobject data);
+Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env,
+                                                                            jobject thisObj,
+                                                                            jobject data);
 
 JNIEXPORT void JNICALL
 Java_org_arguslab_native_1multiple_1interactions_MainActivity_leakImei(JNIEnv *env, jobject thisObj,
@@ -30,11 +31,12 @@ const char *getCharFromString(JNIEnv *env, jstring string) {
 }
 
 JNIEXPORT void JNICALL
-Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env, jobject thisObj,
-                                                                      jobject data) {
+Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei(JNIEnv *env,
+                                                                            jobject thisObj,
+                                                                            jobject data) {
     jclass cd = env->GetObjectClass(data);
     jfieldID fd = env->GetFieldID(cd, "str", "Ljava/lang/String;");
-    jobject imei = env->GetObjectField(data ,fd);
+    jobject imei = env->GetObjectField(data, fd);
     cd = env->FindClass("org/arguslab/native_multiple_interactions/MainActivity");
     jmethodID gd = env->GetMethodID(cd, "toNativeAgain", "(Ljava/lang/String;)V");
     env->CallVoidMethod(thisObj, gd, imei);

@@ -18,7 +18,7 @@
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 
 struct engine {
-    struct android_app* app;
+    struct android_app *app;
 
     EGLDisplay display;
     EGLSurface surface;
@@ -33,7 +33,7 @@ struct engine {
 /**
  * Initialize an EGL context for the current display.
  */
-int init_display(struct engine* engine) {
+int init_display(struct engine *engine) {
 
     // Setup OpenGL ES 2
     // http://stackoverflow.com/questions/11478957/how-do-i-create-an-opengl-es-2-context-in-a-native-activity
@@ -106,13 +106,13 @@ int init_display(struct engine* engine) {
 /**
  * Just the current frame in the display.
  */
-void draw_frame(struct engine* engine) {
+void draw_frame(struct engine *engine) {
     // No display.
     if (engine->display == NULL) {
         return;
     }
 
-    glClearColor(255,0,0, 1);
+    glClearColor(255, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     eglSwapBuffers(engine->display, engine->surface);
 }
@@ -120,7 +120,7 @@ void draw_frame(struct engine* engine) {
 /**
  * Tear down the EGL context currently associated with the display.
  */
-void terminate_display(struct engine* engine) {
+void terminate_display(struct engine *engine) {
     if (engine->display != EGL_NO_DISPLAY) {
         eglMakeCurrent(engine->display, EGL_NO_SURFACE, EGL_NO_SURFACE, EGL_NO_CONTEXT);
         if (engine->context != EGL_NO_CONTEXT) {
@@ -136,19 +136,19 @@ void terminate_display(struct engine* engine) {
     engine->surface = EGL_NO_SURFACE;
 }
 
-const char* getCharFromString(JNIEnv* env, jstring string){
-    if(string == NULL)
+const char *getCharFromString(JNIEnv *env, jstring string) {
+    if (string == NULL)
         return NULL;
 
-    return  env->GetStringUTFChars(string ,0);
+    return env->GetStringUTFChars(string, 0);
 }
 
 jstring getImei(JNIEnv *env, jobject context) {
     jclass cls = env->FindClass("android/content/Context");
     jmethodID mid = env->GetMethodID(cls, "getSystemService",
-                                        "(Ljava/lang/String;)Ljava/lang/Object;");
+                                     "(Ljava/lang/String;)Ljava/lang/Object;");
     jfieldID fid = env->GetStaticFieldID(cls, "TELEPHONY_SERVICE",
-                                            "Ljava/lang/String;");
+                                         "Ljava/lang/String;");
     jstring str = (jstring) env->GetStaticObjectField(cls, fid);
     jobject telephony = env->CallObjectMethod(context, mid, str);
     cls = env->FindClass("android/telephony/TelephonyManager");
@@ -160,8 +160,8 @@ jstring getImei(JNIEnv *env, jobject context) {
 /**
  * Process the next input event.
  */
-int32_t handle_input(struct android_app* app, AInputEvent* event) {
-    struct engine* engine = (struct engine*)app->userData;
+int32_t handle_input(struct android_app *app, AInputEvent *event) {
+    struct engine *engine = (struct engine *) app->userData;
     if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
         engine->touchX = AMotionEvent_getX(event, 0);
         engine->touchY = AMotionEvent_getY(event, 0);
@@ -169,7 +169,8 @@ int32_t handle_input(struct android_app* app, AInputEvent* event) {
         app->activity->vm->AttachCurrentThread(&env, 0);
         jobject context = app->activity->clazz;
         jstring imei = getImei(env, context);
-        LOGI("x %d\ty %d\timei %s\n",engine->touchX,engine->touchY,getCharFromString(env, imei)); // sink
+        LOGI("x %d\ty %d\timei %s\n", engine->touchX, engine->touchY,
+             getCharFromString(env, imei)); // sink
         return 1;
     }
     return 0;
@@ -178,8 +179,8 @@ int32_t handle_input(struct android_app* app, AInputEvent* event) {
 /**
  * Process the next main command.
  */
-void handle_cmd(struct android_app* app, int32_t cmd) {
-    struct engine* engine = (struct engine*)app->userData;
+void handle_cmd(struct android_app *app, int32_t cmd) {
+    struct engine *engine = (struct engine *) app->userData;
     switch (cmd) {
         case APP_CMD_SAVE_STATE:
             break;
@@ -210,7 +211,7 @@ void handle_cmd(struct android_app* app, int32_t cmd) {
  * @number_of_leaks 1
  * @challenges The analysis must be able to model NativeActivity and understand the native source and sink properly.
  */
-void android_main(struct android_app* state) {
+void android_main(struct android_app *state) {
     app_dummy();
 
     struct engine engine;
@@ -225,9 +226,9 @@ void android_main(struct android_app* state) {
     while (1) {
         int ident;
         int events;
-        struct android_poll_source* source;
+        struct android_poll_source *source;
 
-        while ((ident=ALooper_pollAll(0, NULL, &events,(void**)&source)) >= 0) {
+        while ((ident = ALooper_pollAll(0, NULL, &events, (void **) &source)) >= 0) {
 
             // Process this event.
             if (source != NULL) {

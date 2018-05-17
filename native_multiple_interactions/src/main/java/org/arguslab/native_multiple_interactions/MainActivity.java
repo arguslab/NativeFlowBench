@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name native_multiple_interactions
  * @author Fengguo Wei, Xingwei Lin
- * @author_mail fgwei521@gmail.com
- *
+ * @testcase_name native_multiple_interactions
+ * @author_mail fgwei521@gmail.com, xwlin.roy@gmail.com
  * @description Pass a sensitive data to first native function which invoke back to java then invoke second native function leak it.
  * @dataflow imei -> d.str -> Java_org_arguslab_native_1multiple_1interactions_MainActivity_propagateImei
- *                 -> toNativeAgain -> Java_org_arguslab_native_1multiple_1interactions_MainActivity_leakImei -> sink
+ * -> toNativeAgain -> Java_org_arguslab_native_1multiple_1interactions_MainActivity_leakImei -> sink
  * @number_of_leaks 1
  * @challenges The analysis must be able to correctly handle interleaving.
  */

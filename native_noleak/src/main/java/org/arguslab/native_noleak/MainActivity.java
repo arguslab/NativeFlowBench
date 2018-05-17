@@ -8,15 +8,14 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name Native_Noleak
  * @author Fengguo Wei
+ * @testcase_name Native_Noleak
  * @author_mail fgwei521@gmail.com
- *
  * @description The value v of a source is sent to native lib via jni.
- * 				native lib is not leaking the data.
+ * native lib is not leaking the data.
  * @dataflow
  * @number_of_leaks 0
- * @challenges The analysis must be able to track data flow in both java and native to avoid the false positive.
+ * @challenges The analysis must be able to track data flow in both java and native layers to avoid the false positive.
  */
 public class MainActivity extends Activity {
 

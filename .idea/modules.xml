@@ -8,30 +8,22 @@
       <module fileurl="file://$PROJECT_DIR$/native_complexdata/native_complexdata.iml" filepath="$PROJECT_DIR$/native_complexdata/native_complexdata.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_complexdata_stringop/native_complexdata_stringop.iml" filepath="$PROJECT_DIR$/native_complexdata_stringop/native_complexdata_stringop.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_dynamic_register_multiple/native_dynamic_register_multiple.iml" filepath="$PROJECT_DIR$/native_dynamic_register_multiple/native_dynamic_register_multiple.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_dynamic_register_multiple/native_dynamic_register_multiple.iml" filepath="$PROJECT_DIR$/native_dynamic_register_multiple/native_dynamic_register_multiple.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_heap_modify/native_heap_modify.iml" filepath="$PROJECT_DIR$/native_heap_modify/native_heap_modify.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak/native_leak.iml" filepath="$PROJECT_DIR$/native_leak/native_leak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" filepath="$PROJECT_DIR$/native_leak_dynamic_register/native_leak_dynamic_register.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_method_overloading/native_method_overloading.iml" filepath="$PROJECT_DIR$/native_method_overloading/native_method_overloading.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" filepath="$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" filepath="$PROJECT_DIR$/native_multiple_interactions/native_multiple_interactions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" filepath="$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" filepath="$PROJECT_DIR$/native_multiple_libraries/native_multiple_libraries.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak/native_noleak.iml" filepath="$PROJECT_DIR$/native_noleak/native_noleak.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_noleak_array/native_noleak_array.iml" filepath="$PROJECT_DIR$/native_noleak_array/native_noleak_array.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_nosource/native_nosource.iml" filepath="$PROJECT_DIR$/native_nosource/native_nosource.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_nosource/native_nosource.iml" filepath="$PROJECT_DIR$/native_nosource/native_nosource.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure/native_pure.iml" filepath="$PROJECT_DIR$/native_pure/native_pure.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" filepath="$PROJECT_DIR$/native_pure_direct/native_pure_direct.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_pure_direct_customized/native_pure_direct_customized.iml" filepath="$PROJECT_DIR$/native_pure_direct_customized/native_pure_direct_customized.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_pure_direct_customized/native_pure_direct_customized.iml" filepath="$PROJECT_DIR$/native_pure_direct_customized/native_pure_direct_customized.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_set_field_from_arg/native_set_field_from_arg.iml" filepath="$PROJECT_DIR$/native_set_field_from_arg/native_set_field_from_arg.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_set_field_from_arg_field/native_set_field_from_arg_field.iml" filepath="$PROJECT_DIR$/native_set_field_from_arg_field/native_set_field_from_arg_field.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_set_field_from_branches/native_set_field_from_branches.iml" filepath="$PROJECT_DIR$/native_set_field_from_branches/native_set_field_from_branches.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_set_field_from_branches/native_set_field_from_branches.iml" filepath="$PROJECT_DIR$/native_set_field_from_branches/native_set_field_from_branches.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_set_field_from_native/native_set_field_from_native.iml" filepath="$PROJECT_DIR$/native_set_field_from_native/native_set_field_from_native.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_source/native_source.iml" filepath="$PROJECT_DIR$/native_source/native_source.iml" />
-      <module fileurl="file://$PROJECT_DIR$/native_source_clean/native_source_clean.iml" filepath="$PROJECT_DIR$/native_source_clean/native_source_clean.iml" />
       <module fileurl="file://$PROJECT_DIR$/native_source_clean/native_source_clean.iml" filepath="$PROJECT_DIR$/native_source_clean/native_source_clean.iml" />
     </modules>
   </component>

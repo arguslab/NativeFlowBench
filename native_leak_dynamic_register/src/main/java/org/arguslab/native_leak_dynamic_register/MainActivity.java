@@ -16,8 +16,8 @@ import android.telephony.TelephonyManager;
  * The native method is dynamic registered by JNI_OnLoad.
  * @dataflow source -> imei -> send -JNI-> native_send -> data -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
- * The analysis must be able to match the corresponding native method registered by JNI_OnLoad.
+ * @challenges 1) The analysis must be able to track data flow in both java and native layers to capture the data leakage.
+ * 2) The analysis must be able to match the corresponding native method registered by JNI_OnLoad.
  */
 
 public class MainActivity extends Activity {

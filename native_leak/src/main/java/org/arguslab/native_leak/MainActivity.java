@@ -7,15 +7,14 @@ import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
 /**
- * @testcase_name Native_Leak
  * @author Fengguo Wei
+ * @testcase_name Native_Leak
  * @author_mail fgwei521@gmail.com
- *
  * @description The value v of a source is sent to native lib via jni.
- * 				native lib leaks the sensitive data.
+ * native lib leaks the sensitive data.
  * @dataflow source -> imei -> send -JNI-> Java_org_arguslab_native_1noleak_MainActivity_send -> data -> sink
  * @number_of_leaks 1
- * @challenges The analysis must be able to track data flow in both java and native to capture the data leakage.
+ * @challenges The analysis must be able to track data flow in both java and native layers to capture the data leakage.
  */
 public class MainActivity extends Activity {
 

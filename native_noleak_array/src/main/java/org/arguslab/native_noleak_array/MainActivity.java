@@ -1,8 +1,8 @@
 package org.arguslab.native_noleak_array;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
 
@@ -16,7 +16,7 @@ import android.telephony.TelephonyManager;
  * @number_of_leaks 0
  * @challenges The analysis must be able to track data flow in both java and native layers to avoid the false positive.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     static {
         System.loadLibrary("noleak_array"); // "libnoleak.so"

@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/native_dynamic_register_multiple" />
             <option value="$PROJECT_DIR$/native_heap_modify" />
             <option value="$PROJECT_DIR$/native_leak" />
+            <option value="$PROJECT_DIR$/native_leak_array" />
             <option value="$PROJECT_DIR$/native_leak_dynamic_register" />
             <option value="$PROJECT_DIR$/native_method_overloading" />
             <option value="$PROJECT_DIR$/native_multiple_interactions" />

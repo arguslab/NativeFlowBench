@@ -1,10 +1,10 @@
 package org.arguslab.native_heap_modify;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 /**
@@ -17,7 +17,7 @@ import android.util.Log;
  * @number_of_leaks 1
  * @challenges The analysis must be able to track heap modification and data flow in both java and native layers to capture the data leakage.
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
     static {
         System.loadLibrary("heap_modify"); // "libheap_modify.so"
     }

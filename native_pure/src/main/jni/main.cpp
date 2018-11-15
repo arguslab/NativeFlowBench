@@ -161,16 +161,12 @@ jstring getImei(JNIEnv *env, jobject context) {
  * Process the next input event.
  */
 int32_t handle_input(struct android_app *app, AInputEvent *event) {
-    struct engine *engine = (struct engine *) app->userData;
     if (AInputEvent_getType(event) == AINPUT_EVENT_TYPE_MOTION) {
-        engine->touchX = AMotionEvent_getX(event, 0);
-        engine->touchY = AMotionEvent_getY(event, 0);
         JNIEnv *env;
         app->activity->vm->AttachCurrentThread(&env, 0);
         jobject context = app->activity->clazz;
         jstring imei = getImei(env, context);
-        LOGI("x %d\ty %d\timei %s\n", engine->touchX, engine->touchY,
-             getCharFromString(env, imei)); // sink
+        LOGI("%s", getCharFromString(env, imei)); // sink
         return 1;
     }
     return 0;
